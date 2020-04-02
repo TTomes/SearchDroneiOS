@@ -16,36 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0v-z4-Lc4">
-                                <rect key="frame" x="303" y="246" width="231" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="231" id="ZaT-gm-mH4"/>
-                                </constraints>
-                                <state key="normal" title="Mission Start"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfy-bb-qdA">
+                                <rect key="frame" x="337" y="164" width="223" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Mission Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="missionStartAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="prV-av-bUF"/>
+                                    <action selector="missionStartAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="qKC-qC-zib"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-eK-EaN">
-                                <rect key="frame" x="549" y="246" width="32" height="30"/>
-                                <state key="normal" title="Stop"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-82-Luq">
+                                <rect key="frame" x="568" y="164" width="99" height="87"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="missionStopAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="m4Z-Qq-f6D"/>
+                                    <action selector="missionStopAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="mOr-YF-fY0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="y0v-z4-Lc4" firstAttribute="leading" secondItem="cTo-DJ-eQ4" secondAttribute="leading" constant="259" id="2HR-Mf-Ycu"/>
-                            <constraint firstItem="8aP-eK-EaN" firstAttribute="baseline" secondItem="y0v-z4-Lc4" secondAttribute="baseline" id="ID9-OX-8Sm"/>
-                            <constraint firstItem="8aP-eK-EaN" firstAttribute="leading" secondItem="y0v-z4-Lc4" secondAttribute="trailing" constant="15" id="Vmw-2j-uj2"/>
-                            <constraint firstItem="cTo-DJ-eQ4" firstAttribute="bottom" secondItem="y0v-z4-Lc4" secondAttribute="bottom" constant="117" id="nLD-bV-B20"/>
+                            <constraint firstItem="sqU-82-Luq" firstAttribute="leading" secondItem="tfy-bb-qdA" secondAttribute="trailing" constant="8" id="9O4-41-qT0"/>
+                            <constraint firstItem="tfy-bb-qdA" firstAttribute="centerX" secondItem="fhA-0m-wdJ" secondAttribute="centerX" id="EDD-4A-Prb"/>
+                            <constraint firstItem="tfy-bb-qdA" firstAttribute="top" secondItem="cTo-DJ-eQ4" secondAttribute="top" constant="164" id="I51-rn-atE"/>
+                            <constraint firstItem="tfy-bb-qdA" firstAttribute="leading" secondItem="cTo-DJ-eQ4" secondAttribute="leading" constant="293" id="K8f-bl-WYC"/>
+                            <constraint firstItem="cTo-DJ-eQ4" firstAttribute="trailing" secondItem="sqU-82-Luq" secondAttribute="trailing" constant="185" id="YHY-Jn-2Es"/>
+                            <constraint firstItem="tfy-bb-qdA" firstAttribute="baseline" secondItem="sqU-82-Luq" secondAttribute="firstBaseline" id="gDa-DK-2gN"/>
+                            <constraint firstItem="tfy-bb-qdA" firstAttribute="centerY" secondItem="fhA-0m-wdJ" secondAttribute="centerY" id="sZw-pK-Hp2"/>
+                            <constraint firstItem="tfy-bb-qdA" firstAttribute="top" secondItem="sqU-82-Luq" secondAttribute="top" id="zWi-Xv-4Ck"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cTo-DJ-eQ4"/>
                     </view>
                     <connections>
-                        <outlet property="missionStart" destination="y0v-z4-Lc4" id="qgn-H3-q7v"/>
-                        <outlet property="missionStop" destination="8aP-eK-EaN" id="cUd-rm-IWS"/>
+                        <outlet property="missionStart" destination="tfy-bb-qdA" id="qM1-6v-Vgb"/>
+                        <outlet property="missionStop" destination="sqU-82-Luq" id="WyQ-8b-fHF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdJ-Wu-Dfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
