@@ -26,27 +26,26 @@
                                     <action selector="missionStartAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="prV-av-bUF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-tf-NCh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-eK-EaN">
                                 <rect key="frame" x="549" y="246" width="32" height="30"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
-                                    <action selector="missionStopAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="FQQ-et-MWL"/>
+                                    <action selector="missionStopAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="m4Z-Qq-f6D"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="y0v-z4-Lc4" firstAttribute="leading" secondItem="cTo-DJ-eQ4" secondAttribute="leading" constant="259" id="2HR-Mf-Ycu"/>
-                            <constraint firstItem="dUc-tf-NCh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y0v-z4-Lc4" secondAttribute="trailing" symbolic="YES" id="FVm-yZ-ZFZ"/>
-                            <constraint firstItem="dUc-tf-NCh" firstAttribute="baseline" secondItem="y0v-z4-Lc4" secondAttribute="baseline" id="JEc-D5-XNy"/>
-                            <constraint firstItem="cTo-DJ-eQ4" firstAttribute="trailing" secondItem="dUc-tf-NCh" secondAttribute="trailing" constant="271" id="XxY-y4-Pgd"/>
+                            <constraint firstItem="8aP-eK-EaN" firstAttribute="baseline" secondItem="y0v-z4-Lc4" secondAttribute="baseline" id="ID9-OX-8Sm"/>
+                            <constraint firstItem="8aP-eK-EaN" firstAttribute="leading" secondItem="y0v-z4-Lc4" secondAttribute="trailing" constant="15" id="Vmw-2j-uj2"/>
                             <constraint firstItem="cTo-DJ-eQ4" firstAttribute="bottom" secondItem="y0v-z4-Lc4" secondAttribute="bottom" constant="117" id="nLD-bV-B20"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cTo-DJ-eQ4"/>
                     </view>
                     <connections>
                         <outlet property="missionStart" destination="y0v-z4-Lc4" id="qgn-H3-q7v"/>
-                        <outlet property="missionStop" destination="dUc-tf-NCh" id="Dzq-Gt-M9A"/>
+                        <outlet property="missionStop" destination="8aP-eK-EaN" id="cUd-rm-IWS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdJ-Wu-Dfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

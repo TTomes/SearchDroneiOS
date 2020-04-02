@@ -8,6 +8,7 @@ class ViewController: DUXDefaultLayoutViewController {
     @IBOutlet weak var missionStart: UIButton!
     @IBOutlet weak var missionStop: UIButton!
 
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;
     }
