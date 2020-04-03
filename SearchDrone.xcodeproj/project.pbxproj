@@ -14,6 +14,9 @@
 		397A26CB22FAC25E00F81C60 /* ProductCommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A26CA22FAC25E00F81C60 /* ProductCommunicationManager.swift */; };
 		63FFBB0D2435695500F84DD3 /* WaypointMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFBB0C2435695500F84DD3 /* WaypointMission.swift */; };
 		63FFBB1024362D1600F84DD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FFBB0E24362D1600F84DD3 /* Main.storyboard */; };
+		63FFBB122436571600F84DD3 /* DJIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFBB112436571600F84DD3 /* DJIAlert.swift */; };
+		63FFBB142436574400F84DD3 /* DJIImageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFBB132436574400F84DD3 /* DJIImageAnnotation.swift */; };
+		63FFBB16243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFBB15243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift */; };
 		90A28CB276994A8D426557EA /* Pods_SearchDrone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CD6B972979EDF2B8713A6 /* Pods_SearchDrone.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		397A26CA22FAC25E00F81C60 /* ProductCommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCommunicationManager.swift; sourceTree = "<group>"; };
 		63FFBB0C2435695500F84DD3 /* WaypointMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointMission.swift; sourceTree = "<group>"; };
 		63FFBB0F24362D1600F84DD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63FFBB112436571600F84DD3 /* DJIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIAlert.swift; sourceTree = "<group>"; };
+		63FFBB132436574400F84DD3 /* DJIImageAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIImageAnnotation.swift; sourceTree = "<group>"; };
+		63FFBB15243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineElementCollectionViewCell.swift; sourceTree = "<group>"; };
 		7233F07F27C7F050F97A1816 /* Pods-DJI-SDK-HDRPANO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJI-SDK-HDRPANO.release.xcconfig"; path = "Target Support Files/Pods-DJI-SDK-HDRPANO/Pods-DJI-SDK-HDRPANO.release.xcconfig"; sourceTree = "<group>"; };
 		D98CD6B972979EDF2B8713A6 /* Pods_SearchDrone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchDrone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,12 +86,15 @@
 			children = (
 				397A26CA22FAC25E00F81C60 /* ProductCommunicationManager.swift */,
 				397A26B022FAABA300F81C60 /* AppDelegate.swift */,
-				397A26B222FAABA300F81C60 /* ViewController.swift */,
 				63FFBB0E24362D1600F84DD3 /* Main.storyboard */,
-				63FFBB0C2435695500F84DD3 /* WaypointMission.swift */,
+				63FFBB15243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift */,
+				63FFBB112436571600F84DD3 /* DJIAlert.swift */,
+				63FFBB132436574400F84DD3 /* DJIImageAnnotation.swift */,
+				397A26B222FAABA300F81C60 /* ViewController.swift */,
 				397A26B722FAABA400F81C60 /* Assets.xcassets */,
 				397A26B922FAABA400F81C60 /* LaunchScreen.storyboard */,
 				397A26BC22FAABA400F81C60 /* Info.plist */,
+				63FFBB0C2435695500F84DD3 /* WaypointMission.swift */,
 			);
 			path = SearchDrone;
 			sourceTree = "<group>";
@@ -213,7 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFBB16243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift in Sources */,
 				397A26CB22FAC25E00F81C60 /* ProductCommunicationManager.swift in Sources */,
+				63FFBB122436571600F84DD3 /* DJIAlert.swift in Sources */,
+				63FFBB142436574400F84DD3 /* DJIImageAnnotation.swift in Sources */,
 				63FFBB0D2435695500F84DD3 /* WaypointMission.swift in Sources */,
 				397A26B322FAABA300F81C60 /* ViewController.swift in Sources */,
 				397A26B122FAABA300F81C60 /* AppDelegate.swift in Sources */,
