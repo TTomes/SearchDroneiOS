@@ -35,6 +35,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
+    
     fileprivate var _isSimulatorActive: Bool = false
     public var isSimulatorActive: Bool {
         get {
