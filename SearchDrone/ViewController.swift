@@ -17,23 +17,36 @@ enum TimelineElementKind: String {
     case aircraftYaw = "Aircraft Yaw"
 }
 
-class TimelineMissionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MKMapViewDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MKMapViewDelegate {
 
+
+    //availableElementsView
     @IBOutlet weak var availableElementsView: UICollectionView!
+    
     var availableElements = [TimelineElementKind]()
     
+    // simulatorSwitch
     @IBOutlet weak var simulatorSwitch: UISwitch!
+    
+    //mapView
     @IBOutlet weak var mapView: MKMapView!
+    
     
     var homeAnnotation = DJIImageAnnotation(identifier: "homeAnnotation")
     var aircraftAnnotation = DJIImageAnnotation(identifier: "aircraftAnnotation")
     var aircraftAnnotationView: MKAnnotationView!
     
+    
+
+    //timelineView
+    
     @IBOutlet weak var timelineView: UICollectionView!
     var scheduledElements = [TimelineElementKind]()
     
+    //Ply/stop buttons
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    
     
     
     fileprivate var _isSimulatorActive: Bool = false
@@ -148,9 +161,9 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         var image: UIImage!
         
         if annotation.isEqual(self.aircraftAnnotation) {
-            image = #imageLiteral(resourceName: "aircraft")
+            image = #imageLiteral(resourceName: "UHLogo")
         } else if annotation.isEqual(self.homeAnnotation) {
-            image = #imageLiteral(resourceName: "navigation_poi_pin")
+            image = #imageLiteral(resourceName: "UHLogo2")
         }
         
         let imageAnnotation = annotation as! DJIImageAnnotation
@@ -385,7 +398,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         waypoint1.actionTimeoutInSeconds = 60
         waypoint1.cornerRadiusInMeters = 5
         waypoint1.turnMode = .clockwise
-        waypoint1.gimbalPitch = 0
+        waypoint1.gimbalPitch = -30
         
         let loc2 = CLLocationCoordinate2DMake(droneCoordinates.latitude, droneCoordinates.longitude + offset)
         let waypoint2 = DJIWaypoint(coordinate: loc2)
@@ -395,7 +408,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         waypoint2.actionTimeoutInSeconds = 60
         waypoint2.cornerRadiusInMeters = 5
         waypoint2.turnMode = .clockwise
-        waypoint2.gimbalPitch = -90
+        waypoint2.gimbalPitch = -30
         
         let loc3 = CLLocationCoordinate2DMake(droneCoordinates.latitude - offset, droneCoordinates.longitude)
         let waypoint3 = DJIWaypoint(coordinate: loc3)
@@ -405,7 +418,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         waypoint3.actionTimeoutInSeconds = 60
         waypoint3.cornerRadiusInMeters = 5
         waypoint3.turnMode = .clockwise
-        waypoint3.gimbalPitch = 0
+        waypoint3.gimbalPitch = -30
         
         let loc4 = CLLocationCoordinate2DMake(droneCoordinates.latitude, droneCoordinates.longitude - offset)
         let waypoint4 = DJIWaypoint(coordinate: loc4)
@@ -415,7 +428,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         waypoint4.actionTimeoutInSeconds = 60
         waypoint4.cornerRadiusInMeters = 5
         waypoint4.turnMode = .clockwise
-        waypoint4.gimbalPitch = -90
+        waypoint4.gimbalPitch = -30
         
         let waypoint5 = DJIWaypoint(coordinate: loc1)
         waypoint5.altitude = 30
@@ -424,7 +437,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         waypoint5.actionTimeoutInSeconds = 60
         waypoint5.cornerRadiusInMeters = 5
         waypoint5.turnMode = .clockwise
-        waypoint5.gimbalPitch = 0
+        waypoint5.gimbalPitch = -30
         
         mission.add(waypoint1)
         mission.add(waypoint2)

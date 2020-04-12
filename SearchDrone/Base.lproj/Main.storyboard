@@ -26,11 +26,11 @@
                                     <constraint firstAttribute="height" constant="57" id="m83-wC-hED"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start Mission">
+                                <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nUC-aa-Ys3" kind="show" id="UJ5-hC-bTP"/>
+                                    <segue destination="isr-nC-A5v" kind="show" id="Xdl-8T-DHZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,6 +53,63 @@
             </objects>
             <point key="canvasLocation" x="-177.45535714285714" y="-646.37681159420299"/>
         </scene>
+        <!--Waypoint Mission-->
+        <scene sceneID="H7i-gh-IQu">
+            <objects>
+                <viewController id="isr-nC-A5v" customClass="WaypointMission" customModule="SearchDrone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sdm-bB-jtz">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-sn-1A3">
+                                <rect key="frame" x="348" y="169.5" width="200" height="75"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.87791630990000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Rxd-Pb-oyt"/>
+                                    <constraint firstAttribute="height" constant="75" id="XK8-n9-AzQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Start Mission">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="isr-nC-A5v" eventType="touchUpInside" id="iFf-J0-bSE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWN-ao-cjm">
+                                <rect key="frame" x="378" y="276" width="140" height="60"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.87791630990000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="kqv-gI-v05"/>
+                                    <constraint firstAttribute="height" constant="60" id="vOP-5S-Urb"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="isr-nC-A5v" eventType="touchUpInside" id="42X-gc-dVb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cpb-sn-1A3" firstAttribute="centerX" secondItem="sdm-bB-jtz" secondAttribute="centerX" id="6uJ-Av-k5t"/>
+                            <constraint firstItem="cpb-sn-1A3" firstAttribute="centerY" secondItem="sdm-bB-jtz" secondAttribute="centerY" id="E4p-wE-DXX"/>
+                            <constraint firstItem="xWN-ao-cjm" firstAttribute="top" secondItem="cpb-sn-1A3" secondAttribute="bottom" constant="31.5" id="JfM-w3-56Z"/>
+                            <constraint firstItem="xWN-ao-cjm" firstAttribute="centerX" secondItem="cpb-sn-1A3" secondAttribute="centerX" id="bk2-JR-dwM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DnY-Vu-BMq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nmj-gX-k2U"/>
+                    <connections>
+                        <outlet property="startButtonPressed" destination="cpb-sn-1A3" id="vgn-gq-VKc"/>
+                        <outlet property="stopButtonPressed" destination="xWN-ao-cjm" id="aWI-CT-zlS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fv1-6y-Zhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177.45535714285714" y="421.73913043478262"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="nPc-qj-k5W">
             <objects>
@@ -65,11 +122,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="heB-CN-BuI">
-                                <rect key="frame" x="64" y="20" width="287" height="64"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="heB-CN-BuI">
+                                <rect key="frame" x="64" y="20" width="379" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Jxr-aD-9iH"/>
+                                    <constraint firstAttribute="height" constant="50" id="Jxr-aD-9iH"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Crk-OG-mHI">
                                     <size key="itemSize" width="50" height="50"/>
@@ -78,8 +135,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="2M6-B6-8WO" customClass="TimelineElementCollectionViewCell" customModule="DJISDKSwiftDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="7" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="2M6-B6-8WO" customClass="TimelineElementCollectionViewCell" customModule="SearchDrone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -107,28 +164,44 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simulator：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxP-kI-qdY">
-                                <rect key="frame" x="655" y="360" width="90" height="20"/>
+                                <rect key="frame" x="655.5" y="360" width="90" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-6r-0o5">
-                                <rect key="frame" x="750" y="354.5" width="51" height="31"/>
+                                <rect key="frame" x="750.5" y="354.5" width="50.5" height="31"/>
+                                <connections>
+                                    <action selector="onSimulatorSwitchValueChanged:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="Dzo-kU-vGy"/>
+                                </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqb-GK-8rn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqb-GK-8rn">
                                 <rect key="frame" x="359" y="328" width="84" height="57"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.87791630990000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="rOG-ic-F0R"/>
+                                </constraints>
                                 <state key="normal" title="▶️"/>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="0P1-57-Xgk"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW6-12-Gme">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW6-12-Gme">
                                 <rect key="frame" x="451" y="328" width="84" height="57"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.87791630990000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="Q7X-eb-MfK"/>
+                                </constraints>
                                 <state key="normal" title="⏹"/>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="nUC-aa-Ys3" eventType="touchUpInside" id="N1g-ek-oTK"/>
+                                </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rbv-rg-L91">
-                                <rect key="frame" x="557" y="20" width="287" height="64"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rbv-rg-L91">
+                                <rect key="frame" x="458" y="20" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Agw-j2-Bsg"/>
                                     <constraint firstAttribute="height" constant="50" id="t9t-0L-Pjc"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nQi-9E-a7y">
@@ -138,8 +211,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="u1K-0L-mAi" customClass="TimelineElementCollectionViewCell" customModule="DJISDKSwiftDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="7" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="u1K-0L-mAi" customClass="TimelineElementCollectionViewCell" customModule="SearchDrone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -169,33 +242,40 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="rbv-rg-L91" firstAttribute="centerX" secondItem="DxP-kI-qdY" secondAttribute="centerX" constant="-55.5" id="1PS-ZI-rvQ"/>
                             <constraint firstItem="DxP-kI-qdY" firstAttribute="top" secondItem="cTo-DJ-eQ4" secondAttribute="top" constant="360" id="5CX-X7-XXn"/>
                             <constraint firstItem="uqb-GK-8rn" firstAttribute="leading" secondItem="cTo-DJ-eQ4" secondAttribute="leading" constant="315" id="7nI-bk-XIr"/>
+                            <constraint firstItem="cTo-DJ-eQ4" firstAttribute="trailing" secondItem="rbv-rg-L91" secondAttribute="trailing" constant="20" id="8Ht-nf-pBY"/>
                             <constraint firstItem="cTo-DJ-eQ4" firstAttribute="trailing" secondItem="heB-CN-BuI" secondAttribute="trailing" constant="409" id="Acp-Xz-hFi"/>
                             <constraint firstItem="Usc-6r-0o5" firstAttribute="centerY" secondItem="DxP-kI-qdY" secondAttribute="centerY" id="J83-mm-7IX"/>
+                            <constraint firstItem="uqb-GK-8rn" firstAttribute="baseline" secondItem="pW6-12-Gme" secondAttribute="firstBaseline" id="LUR-ta-Ahk"/>
                             <constraint firstItem="heB-CN-BuI" firstAttribute="leading" secondItem="nCB-cv-sDK" secondAttribute="leading" constant="64" id="Mws-Ht-ZJ3"/>
                             <constraint firstItem="pW6-12-Gme" firstAttribute="baseline" secondItem="DxP-kI-qdY" secondAttribute="baseline" constant="-13.5" id="Pz4-54-NWL"/>
+                            <constraint firstItem="pW6-12-Gme" firstAttribute="baseline" secondItem="uqb-GK-8rn" secondAttribute="firstBaseline" id="Sh3-1V-6c0"/>
                             <constraint firstItem="heB-CN-BuI" firstAttribute="top" secondItem="cTo-DJ-eQ4" secondAttribute="top" constant="20" id="W07-eY-sLp"/>
+                            <constraint firstItem="uqb-GK-8rn" firstAttribute="top" secondItem="cTo-DJ-eQ4" secondAttribute="top" constant="328" id="XSi-cD-VEY"/>
                             <constraint firstItem="Usc-6r-0o5" firstAttribute="leading" secondItem="DxP-kI-qdY" secondAttribute="trailing" constant="5" id="rUn-0a-Xcj"/>
                             <constraint firstItem="cTo-DJ-eQ4" firstAttribute="trailing" secondItem="Usc-6r-0o5" secondAttribute="trailing" constant="53" id="rhn-AG-d2N"/>
+                            <constraint firstItem="rbv-rg-L91" firstAttribute="top" secondItem="heB-CN-BuI" secondAttribute="top" id="shi-1H-NVw"/>
                             <constraint firstItem="uqb-GK-8rn" firstAttribute="baseline" secondItem="pW6-12-Gme" secondAttribute="baseline" id="ts0-jd-Qzb"/>
+                            <constraint firstItem="uqb-GK-8rn" firstAttribute="top" secondItem="pW6-12-Gme" secondAttribute="top" id="xG7-8V-CqA"/>
                             <constraint firstItem="pW6-12-Gme" firstAttribute="leading" secondItem="uqb-GK-8rn" secondAttribute="trailing" constant="8" symbolic="YES" id="xNm-GD-hmR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cTo-DJ-eQ4"/>
                     </view>
                     <navigationItem key="navigationItem" id="lnF-Kj-MJr"/>
                     <connections>
-                        <outlet property="availableElementsView" destination="heB-CN-BuI" id="c72-Gd-QrG"/>
-                        <outlet property="mapView" destination="nCB-cv-sDK" id="1L6-P1-wSz"/>
-                        <outlet property="playButton" destination="uqb-GK-8rn" id="fnP-AE-x5O"/>
-                        <outlet property="simulatorSwitch" destination="Usc-6r-0o5" id="583-aO-FEL"/>
-                        <outlet property="stopButton" destination="pW6-12-Gme" id="M0Y-Im-PH6"/>
-                        <outlet property="timelineView" destination="rbv-rg-L91" id="vJd-Mk-fSc"/>
+                        <outlet property="availableElementsView" destination="heB-CN-BuI" id="0cq-5L-4G4"/>
+                        <outlet property="mapView" destination="nCB-cv-sDK" id="crS-vS-k7G"/>
+                        <outlet property="playButton" destination="uqb-GK-8rn" id="Bme-k3-Rl5"/>
+                        <outlet property="simulatorSwitch" destination="Usc-6r-0o5" id="4jq-ba-ho1"/>
+                        <outlet property="stopButton" destination="pW6-12-Gme" id="ANl-n8-X8m"/>
+                        <outlet property="timelineView" destination="rbv-rg-L91" id="nE7-uq-unn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdJ-Wu-Dfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-177.45535714285714" y="150.72463768115944"/>
+            <point key="canvasLocation" x="579" y="380"/>
         </scene>
     </scenes>
     <resources>

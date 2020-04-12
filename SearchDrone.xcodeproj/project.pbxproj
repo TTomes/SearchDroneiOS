@@ -14,7 +14,8 @@
 		397A26CB22FAC25E00F81C60 /* ProductCommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A26CA22FAC25E00F81C60 /* ProductCommunicationManager.swift */; };
 		635580792436DBF000F30F14 /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635580782436DBF000F30F14 /* StartupViewController.swift */; };
 		6355807E2436E05700F30F14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6355807D2436E05700F30F14 /* Images.xcassets */; };
-		63FFBB1024362D1600F84DD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FFBB0E24362D1600F84DD3 /* Main.storyboard */; };
+		63F13029243F716700049C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F13027243F716700049C83 /* Main.storyboard */; };
+		63F1302B243F917D00049C83 /* WaypointMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1302A243F917D00049C83 /* WaypointMission.swift */; };
 		63FFBB122436571600F84DD3 /* DJIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFBB112436571600F84DD3 /* DJIAlert.swift */; };
 		63FFBB142436574400F84DD3 /* DJIImageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFBB132436574400F84DD3 /* DJIImageAnnotation.swift */; };
 		63FFBB16243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFBB15243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift */; };
@@ -34,7 +35,8 @@
 		397A26CA22FAC25E00F81C60 /* ProductCommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCommunicationManager.swift; sourceTree = "<group>"; };
 		635580782436DBF000F30F14 /* StartupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		6355807D2436E05700F30F14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		63FFBB0F24362D1600F84DD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63F13028243F716700049C83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63F1302A243F917D00049C83 /* WaypointMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointMission.swift; sourceTree = "<group>"; };
 		63FFBB112436571600F84DD3 /* DJIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIAlert.swift; sourceTree = "<group>"; };
 		63FFBB132436574400F84DD3 /* DJIImageAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJIImageAnnotation.swift; sourceTree = "<group>"; };
 		63FFBB15243657DB00F84DD3 /* TimelineElementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineElementCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -92,10 +94,11 @@
 				63FFBB112436571600F84DD3 /* DJIAlert.swift */,
 				63FFBB132436574400F84DD3 /* DJIImageAnnotation.swift */,
 				397A26B222FAABA300F81C60 /* ViewController.swift */,
+				63F1302A243F917D00049C83 /* WaypointMission.swift */,
 				635580782436DBF000F30F14 /* StartupViewController.swift */,
 				6355807D2436E05700F30F14 /* Images.xcassets */,
 				397A26B722FAABA400F81C60 /* Assets.xcassets */,
-				63FFBB0E24362D1600F84DD3 /* Main.storyboard */,
+				63F13027243F716700049C83 /* Main.storyboard */,
 				397A26B922FAABA400F81C60 /* LaunchScreen.storyboard */,
 				397A26BC22FAABA400F81C60 /* Info.plist */,
 			);
@@ -171,9 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6355807E2436E05700F30F14 /* Images.xcassets in Resources */,
-				63FFBB1024362D1600F84DD3 /* Main.storyboard in Resources */,
 				397A26BB22FAABA400F81C60 /* LaunchScreen.storyboard in Resources */,
 				397A26B822FAABA400F81C60 /* Assets.xcassets in Resources */,
+				63F13029243F716700049C83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +234,7 @@
 				635580792436DBF000F30F14 /* StartupViewController.swift in Sources */,
 				63FFBB122436571600F84DD3 /* DJIAlert.swift in Sources */,
 				63FFBB142436574400F84DD3 /* DJIImageAnnotation.swift in Sources */,
+				63F1302B243F917D00049C83 /* WaypointMission.swift in Sources */,
 				397A26B322FAABA300F81C60 /* ViewController.swift in Sources */,
 				397A26B122FAABA300F81C60 /* AppDelegate.swift in Sources */,
 			);
@@ -247,10 +251,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		63FFBB0E24362D1600F84DD3 /* Main.storyboard */ = {
+		63F13027243F716700049C83 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				63FFBB0F24362D1600F84DD3 /* Base */,
+				63F13028243F716700049C83 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -390,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tt.searchdrone.uh;
 				PRODUCT_NAME = SearchDrone;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -410,7 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tt.searchdrone.uh;
 				PRODUCT_NAME = SearchDrone;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
