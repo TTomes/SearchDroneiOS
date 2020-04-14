@@ -45,11 +45,33 @@ class WaypointMission: DUXDefaultLayoutViewController {
         return DJIGimbalAttitudeAction(attitude: attitude)
     }
     
+    
+    
     // potential param: _ numWaypoints: Int
     // Waypoint mission - Gets called when the user wants to create a waypoint mission.
     func createWaypointMission() -> DJIWaypointMission? {
         
-        guard let currentLocation = currentLocation else { return DJIWaypointMission() }
+        //Fuction is being ran for some reason
+//        guard let currentLocation = currentLocation else {
+//            NSLog("Returned nil waypoint mission")
+//            return DJIWaypointMission()
+//
+//        }
+        
+        guard let droneLocationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation) else {
+            return nil
+        }
+        NSLog("droneLocationKey created")
+        guard let droneLocationValue = DJISDKManager.keyManager()?.getValueFor(droneLocationKey) else {
+            NSLog("Nil drone location found")
+            return nil
+        }
+        NSLog("droneLocationValue created")
+
+        let droneLocation = droneLocationValue.value as! CLLocation
+        NSLog("\(droneLocation)")
+        let droneCoordinates = droneLocation.coordinate
+        NSLog("\(droneCoordinates)")
         
         // Create waypoint mission instance
         let mission = DJIMutableWaypointMission()
@@ -65,14 +87,17 @@ class WaypointMission: DUXDefaultLayoutViewController {
         mission.gotoFirstWaypointMode = .safely
         mission.repeatTimes = 1 // Can change this if the user wants continous flights of same area.
         
-        let waypoint = DJIWaypoint(coordinate: currentLocation.coordinate)
+        //Create waypoints
+        let waypoint = DJIWaypoint(coordinate: droneCoordinates)
         waypoint.altitude = 10
         
         let waypoint2 = DJIWaypoint(coordinate: CLLocationCoordinate2D(latitude: 29.704815, longitude: -95.858103))
         waypoint.altitude = 10
         
+        //Add waypoints to the mission
         mission.add(waypoint)
         mission.add(waypoint2)
+        NSLog("Waypoints added.")
         
         return mission
         
@@ -80,30 +105,45 @@ class WaypointMission: DUXDefaultLayoutViewController {
     
     // Upload the mission to the Drone
     func uploadAndStartMission(mission: DJIWaypointMission) {
-           guard let missionControl = DJISDKManager.missionControl() else {
-                NSLog("Failed to create mission controller.")
-                return
-            }
-        
-           NSLog("Loading Mission into memory.")
+           guard let missionControl = DJISDKManager.missionControl() else { return }
+    
            missionControl.waypointMissionOperator().load(mission)
-           NSLog("Uploading Mission.")
-        
            missionControl.waypointMissionOperator().uploadMission { [weak self] (error) in
-               NSLog("Adding Listener.")
-               missionControl.waypointMissionOperator().addListener(toStarted: self!, with: nil, andBlock: {})
+               missionControl.waypointMissionOperator().addListener(toStarted: self, with: nil, andBlock: {})
            }
-           
-           missionControl.waypointMissionOperator().startMission(completion: nil)
+    
+           missionControl.waypointMissionOperator().addListener(toUploadEvent: self, with: nil) { (event) in
+    
+               guard let progress = event.progress else {
+                   return
+               }
+    
+               print("progress: \(progress)")
+    
+               if progress.totalWaypointCount - 1 == progress.uploadedWaypointIndex, progress.isWaypointSummaryUploaded {
+    
+                   DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                       missionControl.waypointMissionOperator().startMission(completion: nil)
+                   })
+               }
+           }
        }
     
-    // Add buttons actions
+    
+    // Add button actions
     @IBAction func startButtonPressed(_ sender: UIButton) {
-
+        
         NSLog("startButtonPressed") //Update Log for debugging
         
+        // Create the Waypoint mission (return basic Waypoint Mission (empty mission)
+        guard let waypointMission = createWaypointMission() else {
+            NSLog("Empty Mission created")
+            return
+            
+        }
+        
         // Upload the mission to the drone
-        self.uploadAndStartMission(mission: self.createWaypointMission()!)
+        self.uploadAndStartMission(mission: waypointMission)
         
         
         // Hide Start button
@@ -114,6 +154,13 @@ class WaypointMission: DUXDefaultLayoutViewController {
     }
     
     @IBAction func stopButtonPressed(_ sender: Any) {
+        NSLog("stopButtonPressed")
+        
+        
+        //
+        
+        
+        
     }
     
     
